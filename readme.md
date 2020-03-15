@@ -1,4 +1,5 @@
 ﻿![O3one](https://i.ibb.co/W3R6W7F/O3one.png)
+ 
 **O3one MQ** is a simple, yet powerful messaging broker. It is based on lightweight ØMQ protocol.
 
 ## Installation
@@ -48,12 +49,15 @@ Under the [O3one MQ](http://127.0.0.1:9000/) menu, choose [Dump](http://127.0.0.
 ![Queue visualisation](https://i.ibb.co/c8TN8X5/image.png)
 ## Replication
 O3one MQ currently supports two differents replication technologies. 
+
 **MMAP** is the short for *memory-map*. It's a very fast way to store a limited amount of data as a binary file, linked to RAM. It makes any program running on the same machine able to read in realtime the last queue elements. Enabled by default, it is meant as a "backup & restaure" solution for app crashes and reboot. Mmap can also be used as a dispatcher if we need many O3one MQ instances to run simultaneously. MMAP aren't lossless, they only keep track of lasts queue items, because it's a size-limitted buffer.
+
 **SQL** means that every messages will be SQL-logged into a database. Currently, O3one MQ uses a *SQLite* database located in `db/o3mq.db`.  Although SQL is a lossless way to store informations, processing speed will be decreased by *~10* times when enabled.  It is recommanded to enable it only if you need a full track of everything and don't have an huge server load. 
 
 ## Configuration
 ### From a file
 O3one MQ supports YAML configuration. The main file is called `O3one.yaml` under the `config` folder. 
+
 Here's a simple configuration:
 ```yaml
 dashboard_port: 9000
@@ -150,7 +154,9 @@ socket.send_string("%s %s %s" % (topic, message, priority))
 ```
 
 Client shall now display : `o3 Hello 5`
+
 You can also ensure it have been posted on the Dashboard :
+
 ![enter image description here](https://i.ibb.co/znBqQYD/image.png)
 
 ## Final notes
@@ -166,6 +172,7 @@ O3one wasn't originally designed as a "professional" messaging broker, but more 
 > Can you give me support with O3one MQ ? It does not work on my machine ?
 
 No, but Uni can, Ganbatte ne ! 
-![Uni shall protect you](https://66.media.tumblr.com/18e9654d35d470054de32789aa4107ea/5efa507109904d53-f1/s640x960/5b21a7f8a386683c792b497477f200c1e3669ab1.gif)
-_PS: It works on my machine._
 
+![Uni shall protect you](https://66.media.tumblr.com/18e9654d35d470054de32789aa4107ea/5efa507109904d53-f1/s640x960/5b21a7f8a386683c792b497477f200c1e3669ab1.gif)
+
+_PS: It works on my machine._
