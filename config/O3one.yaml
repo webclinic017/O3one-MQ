@@ -1,0 +1,12 @@
+ack_rep: OK
+persist_enabled: no
+dashboard_port: 9000
+dashboard_enabled: yes
+priority_enabled: no
+db_path: ./db/
+default_connect_timeout: 5
+hostname: 127.0.0.1
+log_path: ./logs/
+port_pub: 5555
+port_sub: 5556
+mmap_enabled: yes
